@@ -1,9 +1,8 @@
 package exam.array;
 
 import java.io.*;
-import java.util.HashSet;
 
-public class Main {
+public class Array2577 {
 
 	public static void main(String[] args) throws IOException {
 
@@ -14,15 +13,18 @@ public class Main {
 		
 		int arr[] = new int[10];
 		
-		HashSet<Integer> set = new HashSet<Integer>(); 
+		String result = String.valueOf(Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine()));
 		
-		for(int i=0; i<arr.length; i++) {
-			
-			set.add((Integer.parseInt(br.readLine()))%42);
+		
+		
+		for(int i = 0; i<result.length(); i++) {
+			int j =(result.charAt(i)-'0'); 
+			arr[j]++; 
 		}
 		
-		sb.append(set.size());
-		
+		for(int i=0; i<arr.length; i++) {
+			sb.append(arr[i]).append("\n");
+		}
 		
 		bw.write(sb.toString());
 		bw.flush();
